@@ -58,28 +58,25 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  window.addEventListener('keydown', function (e) {
+
+  function playSound(e){
     //the back-ticks (`) allow us to inject the ES6 template string (${}) variable inside the string for the selector.
     const audio = document.querySelector(`audio[data-key= "${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     if (!audio) return; //this just stops the function from running
     audio.currentTime = 0; //rewind the audio to the start..so every time the function runs, meaning every time a key is pressed, the audio will play continuously when key is pressed several times.
-
     audio.play();
-
     key.classList.add('playing');
-  });
+  }
 
   function removeTransition(e) {
     if (e.propertyName !== 'transform') return; //skip if it's not a transform
-    console.log(this);
-
-
+    this.classList.remove('playing');
   }
 
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
+  window.addEventListener('keydown', playSound);
 </script>
 
 
