@@ -75,9 +75,9 @@
 
     // 5. Sort the inventors by years lived
             const oldest = inventors.sort(function(a, b){
-              const firstGuy = a.passed - a.year;
-              const lastGuy = b.passed - b.year;
-              return lastGuy > firstGuy ? -1 : 1 ;
+              const firstGuyYearsLived = a.passed - a.year;
+              const nextGuyYearsLived = b.passed - b.year;
+              return nextGuyYearsLived > firstGuyYearsLived ? -1 : 1 ;
             });
             console.table(oldest);
             //when you come back, think about how the sort function is working?? break it down
