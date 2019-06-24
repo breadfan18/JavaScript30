@@ -53,7 +53,7 @@
             console.log(firstAndLast1);
 
     // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
+    // 3. Sort the inventors by birth date, oldest to youngest
             const ordered = inventors.sort(function (personA, personB) {
               if (personA.year > personB.year) {
                 return 1;
@@ -74,6 +74,13 @@
             console.log(totalYears);
 
     // 5. Sort the inventors by years lived
+            const oldest = inventors.sort(function(a, b){
+              const firstGuy = a.passed - a.year;
+              const lastGuy = b.passed - b.year;
+              return lastGuy > firstGuy ? -1 : 1 ;
+            });
+            console.table(oldest);
+            //when you come back, think about how the sort function is working?? break it down
 
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
