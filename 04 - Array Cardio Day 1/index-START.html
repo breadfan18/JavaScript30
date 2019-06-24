@@ -51,8 +51,20 @@
             //console log with print out the number of spaces that are between the each template string i.e ${}
             const firstAndLast1 = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
             console.log(firstAndLast1);
+
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+            const ordered = inventors.sort(function (personA, personB) {
+              if (personA.year > personB.year) {
+                return 1;
+              }else {
+                return -1;
+              }
+            });
+            console.table(ordered);
+            //the way above using if else works, but we can instead use arrow function, and a ternary operator(which is short form of if else statement) instead as below:
+            const ordered1 = inventors.sort((personA, personB) => personA.year > personB.year ? 1 : -1);
+            console.table(ordered1);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
