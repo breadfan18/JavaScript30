@@ -47,8 +47,8 @@
             const firstAndLast = inventors.map(inventor => (inventor.first +  " " + inventor.last));
             console.log(firstAndLast);
 
-            //instead of appending an empty space string " " between the first and last, we can instead use the template literals ${} surrounded by back ticks ``
-            //console log with print out the number of spaces that are between the each template literal i.e ${}
+            //instead of appending an empty space string " " between the first and last, we can instead use the template strings ${} surrounded by back ticks ``
+            //console log with print out the number of spaces that are between the each template string i.e ${}
             const firstAndLast1 = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
             console.log(firstAndLast1);
     // Array.prototype.sort()
